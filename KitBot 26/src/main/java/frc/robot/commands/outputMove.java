@@ -1,14 +1,15 @@
 package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants;
-import frc.robot.subsystems.Output;
-public class outputMove extends Command{
-    private Output output;
-    public outputMove(Output fahhh){
+import frc.robot.subsystems.Shooter;
+public class outputMove extends Command{            
+    private Shooter output;
+    public outputMove(Shooter fahhh){
         output = fahhh;
     }
     @Override
     public void execute() {
+        System.out.println("outputting"); 
         output.moveOutput(Constants.OutputConstants.motorSpeedMoveOutput);
       }
     @Override

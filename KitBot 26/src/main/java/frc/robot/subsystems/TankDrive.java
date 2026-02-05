@@ -60,8 +60,8 @@ public class TankDrive extends SubsystemBase{
       double forwardVal = leftAxis.get();
       double rotateVal = -rotationAxis.get();
       
-      leftLeader.set(forwardVal + rotateVal);
-      rightLeader.set(forwardVal - rotateVal);
+      leftLeader.set(forwardVal+ rotateVal);
+      rightLeader.set(forwardVal- rotateVal);
     }
       
     /* 

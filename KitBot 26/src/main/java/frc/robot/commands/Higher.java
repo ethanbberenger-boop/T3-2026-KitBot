@@ -1,17 +1,22 @@
 package frc.robot.commands;
-import frc.robot.Constants;
-import frc.robot.subsystems.*;
+
+import com.revrobotics.spark.SparkLowLevel.MotorType;
+import com.revrobotics.spark.SparkMax;
+import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
+import com.revrobotics.spark.config.SparkMaxConfig;
+
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 import frc.robot.subsystems.Shooter;
-public class inputMove extends Command{
+public class Higher extends Command{
     private Shooter input;
-    public inputMove(Shooter fahhh){
+    public Higher(Shooter fahhh){
         input = fahhh;
     }
-    @Override
     public void execute() {
         System.out.println("Running");
-        input.moveInput(Constants.InputConstants.motorSpeedMoveInput);
+        input.ReV(Constants.InputConstants.motorSpeedMoveInput);
       }
     @Override
     public void end(boolean interrupted) {
@@ -24,3 +29,5 @@ public class inputMove extends Command{
         return false;
       }
 }
+
+

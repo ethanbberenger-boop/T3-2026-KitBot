@@ -17,20 +17,20 @@ public final class Constants {
   }
   public static class OutputConstants{
     //not final constants just placeholders
-    public static final double motorSpeedMoveOutput = 0;
-    public static final int outputMotor = 3;
+    public static final double motorSpeedMoveOutput = 1;
+    public static final int outputMotor = 4;
   }
   public static class InputConstants{
     //not final constants just placeholders
-    public static final double motorSpeedMoveInput = 0;
-    public static final int inputMotor = 3;
+    public static final double motorSpeedMoveInput = 1;
+    public static final int inputMotor = 6;
   }
   public static class DriveConstants {
     //not final constants just placeholders
    public static final int LEFT_LEADER_ID = 3;
-   public static final int LEFT_FOLLOWER_ID = 3;
-   public static final int RIGHT_LEADER_ID = 3;
-   public static final int RIGHT_FOLLOWER_ID = 3;
+   public static final int LEFT_FOLLOWER_ID = 12;
+   public static final int RIGHT_LEADER_ID = 7;
+   public static final int RIGHT_FOLLOWER_ID = 13;
   }
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;

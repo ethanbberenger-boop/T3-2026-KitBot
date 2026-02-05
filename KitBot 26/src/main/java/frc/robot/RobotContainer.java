@@ -12,7 +12,7 @@ import frc.robot.commands.inputMove;
 import frc.robot.commands.*;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Input;
-import frc.robot.subsystems.Output;
+import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.TankDrive;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
@@ -28,9 +28,9 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 public class RobotContainer {
   //controller
-  private final Input input;
   private final inputMove inputmove;
-  private final Output output;
+  private final Shooter shooter;
+  private final Higher higher;
   private final outputMove outputmove;
   private final CommandXboxController operator = new CommandXboxController(OperatorConstants.kDriverControllerPort);
 //commands
@@ -40,16 +40,17 @@ public class RobotContainer {
   
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
-    input = new Input();
-    inputmove = new inputMove(input);
-    output = new Output();
-    outputmove = new outputMove(output);
+    shooter = new Shooter();
+    inputmove = new inputMove(shooter);
+    outputmove = new outputMove(shooter);
+    higher = new Higher(shooter);
     configureBindings();
       }
     
     
       private void configureBindings() {
-        operator.leftTrigger(.1).whileTrue(inputmove);
-        operator.rightTrigger(.1).whileTrue(outputmove);
+        operator.leftTrigger().whileTrue(inputmove);
+        operator.rightTrigger().whileTrue(outputmove);
+        operator.leftBumper().whileTrue(higher);
       }
 }
