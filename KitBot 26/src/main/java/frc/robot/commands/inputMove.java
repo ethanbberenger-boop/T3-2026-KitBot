@@ -5,8 +5,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Shooter;
 public class inputMove extends Command{
     private Shooter input;
-    public inputMove(Shooter fahhh){
-        input = fahhh;
+    public inputMove(Shooter set){
+        input = set;
     }
     @Override
     public void execute() {

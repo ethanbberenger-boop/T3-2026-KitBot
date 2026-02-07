@@ -4,8 +4,8 @@ import frc.robot.Constants;
 import frc.robot.subsystems.Shooter;
 public class outputMove extends Command{            
     private Shooter output;
-    public outputMove(Shooter fahhh){
-        output = fahhh;
+    public outputMove(Shooter set){
+        output = set;
     }
     @Override
     public void execute() {

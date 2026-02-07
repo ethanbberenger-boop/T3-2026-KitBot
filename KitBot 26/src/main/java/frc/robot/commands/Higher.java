@@ -11,8 +11,8 @@ import frc.robot.Constants;
 import frc.robot.subsystems.Shooter;
 public class Higher extends Command{
     private Shooter input;
-    public Higher(Shooter fahhh){
-        input = fahhh;
+    public Higher(Shooter set){
+        input = set;
     }
     public void execute() {
         System.out.println("Running");
