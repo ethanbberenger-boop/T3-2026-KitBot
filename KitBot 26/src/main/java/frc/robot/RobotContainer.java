@@ -39,6 +39,7 @@ public class RobotContainer {
   
   
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
+  
   public RobotContainer() {
     shooter = new Shooter();
     inputmove = new inputMove(shooter);
@@ -51,6 +52,7 @@ public class RobotContainer {
       private void configureBindings() {
         operator.leftTrigger().whileTrue(inputmove);
         operator.rightTrigger().whileTrue(outputmove);
-        operator.leftBumper().whileTrue(higher);
-      }
+        operator.leftBumper().toggleOnTrue(higher); 
+        
+}
 }
