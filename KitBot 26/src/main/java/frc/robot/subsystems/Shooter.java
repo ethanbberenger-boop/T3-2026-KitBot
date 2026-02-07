@@ -36,6 +36,9 @@ public class Shooter extends SubsystemBase{
         outputMotor.set(-speed);
         inputMotor.set(-speed);
                 }
+         public void stopFeed(){
+                inputMotor.stopMotor();
+        }
         public void stopOutput(){
                 outputMotor.stopMotor();
                 inputMotor.stopMotor();

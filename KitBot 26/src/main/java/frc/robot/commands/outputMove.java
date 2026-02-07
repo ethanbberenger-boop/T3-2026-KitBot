@@ -11,17 +11,16 @@ public class outputMove extends Command{
     @Override
     public void execute() {
         time++;
-        if(time < 30){
-            output.stopOutput();
+        if(time < 35){
+            output.stopFeed();
         }
-        else if(time < 40){
+        else if(time < 55){
             output.moveOutput(Constants.OutputConstants.motorSpeedMoveOutput);
         }
         else{
         time = 0;
         }
-        System.out.println("outputting"); 
-        output.moveOutput(Constants.OutputConstants.motorSpeedMoveOutput);
+        System.out.println("outputting");
     }
     @Override
     public void end(boolean interrupted) {

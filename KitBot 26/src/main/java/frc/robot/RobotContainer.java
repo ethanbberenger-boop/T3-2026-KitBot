@@ -33,6 +33,7 @@ public class RobotContainer {
   private final Higher higher;
   private final outputMove outputmove;
   private final CommandXboxController operator = new CommandXboxController(OperatorConstants.kDriverControllerPort);
+  //private final TankDrive drive = new TankDrive();
 //commands
   private final TankDrive drive = new TankDrive(() -> operator.getLeftY(),() -> operator.getRightX());
   //subsystem
@@ -53,6 +54,7 @@ public class RobotContainer {
         operator.leftTrigger().whileTrue(inputmove);
         operator.rightTrigger().whileTrue(outputmove);
         operator.leftBumper().toggleOnTrue(higher); 
+        //drive.move(operator.getLeftY(), operator.getRightX());
         
 }
 }

@@ -34,6 +34,9 @@ public class TankDrive extends SubsystemBase{
       leftAxis = forward;
       rotationAxis = rotate;
 
+//public TankDrive(){
+
+
       leftLeader = new SparkMax(Constants.DriveConstants.LEFT_LEADER_ID, MotorType.kBrushed);
         leftFollower = new SparkMax(Constants.DriveConstants.LEFT_FOLLOWER_ID, MotorType.kBrushed);
         rightLeader = new SparkMax(Constants.DriveConstants.RIGHT_LEADER_ID, MotorType.kBrushed);
@@ -54,16 +57,15 @@ public class TankDrive extends SubsystemBase{
     leftFollower.configure(leftFollowerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
     rightLeader.configure(rightLeaderConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
     rightFollower.configure(rightFollowerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
-    }
+    } 
     @Override
     public void periodic(){
       double forwardVal = leftAxis.get();
       double rotateVal = -rotationAxis.get();
-      
       leftLeader.set(forwardVal+ rotateVal);
       rightLeader.set(forwardVal- rotateVal);
-    }
-      
+    } 
+}
     /* 
     public void move(double speed, double turn){
       leftLeader.set(speed+ turn);
@@ -78,5 +80,6 @@ public class TankDrive extends SubsystemBase{
       rightLeader.set(0);
       rightFollower.set(0);
     }
-      */
+      
 }
+*/
