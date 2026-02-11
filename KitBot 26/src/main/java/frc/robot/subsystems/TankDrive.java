@@ -11,16 +11,20 @@ import com.revrobotics.spark.SparkBase.ResetMode;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
-
 
 public class TankDrive extends SubsystemBase{
     private SparkMax leftLeader;
   private SparkMax leftFollower;
   private SparkMax rightLeader;
   private SparkMax rightFollower;
+private DifferentialDrive m_robotDrive;
+  private final PWMSparkMax m_leftMotor = new PWMSparkMax(Constants.DriveConstants.LEFT_LEADER_ID);
+  private final PWMSparkMax m_rightMotor = new PWMSparkMax(Constants.DriveConstants.RIGHT_LEADER_ID);
 
   private SparkMaxConfig globalConfig = new SparkMaxConfig();
   private SparkMaxConfig leftLeaderConfig = new SparkMaxConfig();
@@ -41,7 +45,7 @@ public class TankDrive extends SubsystemBase{
         leftFollower = new SparkMax(Constants.DriveConstants.LEFT_FOLLOWER_ID, MotorType.kBrushed);
         rightLeader = new SparkMax(Constants.DriveConstants.RIGHT_LEADER_ID, MotorType.kBrushed);
         rightFollower = new SparkMax(Constants.DriveConstants.RIGHT_FOLLOWER_ID, MotorType.kBrushed);
-
+m_robotDrive = new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);
       globalConfig.smartCurrentLimit(50)
       .idleMode(IdleMode.kBrake);
       leftLeaderConfig.apply(globalConfig)
@@ -60,10 +64,12 @@ public class TankDrive extends SubsystemBase{
     } 
     @Override
     public void periodic(){
+      /* 
       double forwardVal = leftAxis.get();
       double rotateVal = -rotationAxis.get();
       leftLeader.set(forwardVal+ rotateVal);
-      rightLeader.set(forwardVal- rotateVal);
+      rightLeader.set(forwardVal- rotateVal);*/
+        m_robotDrive.arcadeDrive(leftAxis.get(), rotationAxis.get());
     } 
 }
     /* 

@@ -10,7 +10,6 @@ public class inputMove extends Command{
     }
     @Override
     public void execute() {
-        System.out.println("Running");
         input.moveInput(Constants.InputConstants.motorSpeedMoveInput);
       }
     @Override

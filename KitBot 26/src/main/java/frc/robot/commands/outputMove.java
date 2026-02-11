@@ -4,23 +4,14 @@ import frc.robot.Constants;
 import frc.robot.subsystems.Shooter;
 public class outputMove extends Command{            
     private Shooter output;
-    int time = 0;
+
+
     public outputMove(Shooter set){
         output = set;
     }
     @Override
     public void execute() {
-        time++;
-        if(time < 35){
-            output.stopFeed();
-        }
-        else if(time < 55){
-            output.moveOutput(Constants.OutputConstants.motorSpeedMoveOutput);
-        }
-        else{
-        time = 0;
-        }
-        System.out.println("outputting");
+        output.moveOutput(Constants.OutputConstants.motorSpeedMoveOutput);
     }
     @Override
     public void end(boolean interrupted) {

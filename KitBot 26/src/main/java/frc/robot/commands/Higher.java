@@ -16,7 +16,7 @@ public class Higher extends Command{
     }
     public void execute() {
         System.out.println("Running");
-        input.ReV(Constants.InputConstants.motorSpeedMoveInput);
+        input.ReV(1);
       }
     @Override
     public void end(boolean interrupted) {

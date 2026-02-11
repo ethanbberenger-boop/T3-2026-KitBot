@@ -17,7 +17,7 @@ public final class Constants {
   }
   public static class OutputConstants{
     //not final constants just placeholders
-    public static final double motorSpeedMoveOutput = 0.85;
+    public static final double motorSpeedMoveOutput = 1;
     public static final int outputMotor = 4;
   }
   public static class InputConstants{

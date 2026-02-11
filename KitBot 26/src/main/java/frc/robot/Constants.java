@@ -17,12 +17,12 @@ public final class Constants {
   }
   public static class OutputConstants{
     //not final constants just placeholders
-    public static final double motorSpeedMoveOutput = 1;
+    public static final double motorSpeedMoveOutput = 0.85;
     public static final int outputMotor = 4;
   }
   public static class InputConstants{
     //not final constants just placeholders
-    public static final double motorSpeedMoveInput = 1;
+    public static final double motorSpeedMoveInput = 0.6;
     public static final int inputMotor = 6;
   }
   public static class DriveConstants {

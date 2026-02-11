@@ -15,7 +15,7 @@ public class Higher extends Command{
         input = set;
     }
     public void execute() {
-        System.out.println("Running");
+        
         input.ReV(.85);
       }
     @Override
