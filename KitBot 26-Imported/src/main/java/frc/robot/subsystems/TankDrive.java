@@ -67,7 +67,7 @@ m_robotDrive = new DifferentialDrive(leftLeader::set, rightLeader::set);
       double rotateVal = -rotationAxis.get();
       leftLeader.set(forwardVal+ rotateVal);
       rightLeader.set(forwardVal- rotateVal);*/
-        m_robotDrive.arcadeDrive(-leftAxis.get(), -rotationAxis.get());
+        m_robotDrive.arcadeDrive(leftAxis.get(), rotationAxis.get());
     } 
 }
     /* 
