@@ -5,10 +5,6 @@
 package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
-import frc.robot.commands.Autos;
-import frc.robot.commands.ExampleCommand;
-import frc.robot.commands.outputMove;
-import frc.robot.commands.inputMove;
 import frc.robot.commands.*;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Input;
@@ -48,7 +44,8 @@ public class RobotContainer {
     inputmove = new inputMove(shooter);
     outputmove = new outputMove(shooter);
     higher = new Higher(shooter);
-    SmartDashboard.putNumber("BatteryVolts", RobotController.getBatteryVoltage());
+    configureBindings();
+    
       }
     
     

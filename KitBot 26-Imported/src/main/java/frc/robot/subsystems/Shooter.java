@@ -31,6 +31,7 @@ public class Shooter extends SubsystemBase{
      public void moveOutput(double speed){
         outputMotor.set(-speed);
         inputMotor.set(speed);
+        
              }
         public void moveInput(double speed){
         outputMotor.set(-speed);

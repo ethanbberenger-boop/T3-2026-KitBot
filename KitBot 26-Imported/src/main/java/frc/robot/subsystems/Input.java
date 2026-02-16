@@ -20,7 +20,8 @@ public class Input extends SubsystemBase{
        .inverted(false);
      }
      public void moveInput(double speed){
-inputMotor.set(speed);
+      System.out.println("o");
+     inputMotor.set(speed);
      }
      public void stopInput(){
         inputMotor.stopMotor();

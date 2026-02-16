@@ -5,6 +5,7 @@ import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 import com.revrobotics.spark.config.SparkMaxConfig;
 
+import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
@@ -15,8 +16,13 @@ public class Higher extends Command{
         input = set;
     }
     public void execute() {
-        
+      //remove before first comp
+    if(RobotController.getBatteryVoltage() < 10.5){
+      input.ReV(.9);
+    }
+      else{
         input.ReV(.85);
+  }
       }
     @Override
     public void end(boolean interrupted) {
